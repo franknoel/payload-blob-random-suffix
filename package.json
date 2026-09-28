@@ -15,11 +15,14 @@
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
     "test": "pnpm run test:int && pnpm run test:e2e",
     "test:e2e": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" playwright test --config=playwright.config.ts",
-    "test:int": "cross-env NODE_OPTIONS=--no-deprecation vitest run --config ./vitest.config.mts"
+    "test:int": "cross-env NODE_OPTIONS=--no-deprecation vitest run --config ./vitest.config.mts",
+    "check": "cross-env NODE_OPTIONS=--no-deprecation payload run scripts/check.ts"
   },
   "dependencies": {
+    "@payloadcms/db-mongodb": "3.90.2",
     "@payloadcms/next": "3.90.2",
     "@payloadcms/richtext-lexical": "3.90.2",
+    "@payloadcms/storage-vercel-blob": "3.90.2",
     "@payloadcms/ui": "3.90.2",
     "cross-env": "^7.0.3",
     "dotenv": "16.4.7",
@@ -28,8 +31,7 @@
     "payload": "3.90.2",
     "react": "19.2.6",
     "react-dom": "19.2.6",
-    "sharp": "0.35.4",
-    "@payloadcms/db-mongodb": "3.90.2"
+    "sharp": "0.35.4"
   },
   "devDependencies": {
     "@playwright/test": "1.58.2",
